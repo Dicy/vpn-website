@@ -1,0 +1,16 @@
+# NodeJS
+node_modules/
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+
+
+*.log*
+.nuxt
+.nitro
+.cache
+.output
+.env
+dist
