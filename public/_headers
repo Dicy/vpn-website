@@ -1,3 +1,5 @@
-# prevent .pages.dev instances from showing in search engines
+# This file only works for static assets, use middleware for SSR content
+
+# Prevent .pages.dev instances from showing in search engines
 https://:project.pages.dev/*
   X-Robots-Tag: noindex
