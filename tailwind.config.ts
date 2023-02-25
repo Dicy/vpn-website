@@ -15,6 +15,10 @@ export default {
       'small': ['0.875rem', { lineHeight: '1.25rem' }], // 14px
     },
     colors: {
+      'inherit': 'inherit',
+      'current': 'currentColor',
+      'transparent': 'transparent',
+      'white': '#ffffff',
       'blue': {
         100: 'hsl(222, 95%, 88%)',
         200: 'hsl(222, 95%, 82%)',
