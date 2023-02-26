@@ -112,19 +112,18 @@
   <slot />
 </template>
 
-<style>
-:root {
+<style scoped>
+:global(:root) {
   --header-height: 4.5rem; /* 72px */
   --bg-offset: -30vw;
   --bg-overlay: linear-gradient(hsl(222deg 86% 10% / 54%), hsl(222deg 86% 10% / 54%));
 }
 
 @media (max-width: 600px) {
-  :root {
+  :global(:root) {
     --bg-offset: 0px;
   }
 }
-
 
 .header-background {
   background: var(--bg-overlay), url('@/assets/images/header-background-network.jpg') no-repeat center var(--bg-offset);
