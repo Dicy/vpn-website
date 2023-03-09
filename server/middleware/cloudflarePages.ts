@@ -7,7 +7,7 @@ export default defineEventHandler(async (event) => {
     setResponseHeader(event, "X-Robots-Tag", "noindex");
     // redirect main pages.dev domain
     if (hostname.split(".").length === 3) {
-      await sendRedirect(event, `https://vpn.dicy.dev`, 301)
+      await sendRedirect(event, `https://dicyvpn.com`, 301)
     }
   }
 });
