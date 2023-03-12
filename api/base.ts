@@ -18,20 +18,20 @@ export const createApi = (host: string) => {
         return response;
       });
     },
-    async get<T>(path: string): Promise<T> {
+    async get<T>(path: string, isPublic = false): Promise<T> {
       const response = await this.rawRequest(path, {
         method: "GET"
-      });
+      }, !isPublic);
       if (!response.ok) {
         throw new Error(await response.text());
       }
       return await response.json();
     },
-    async post<T>(path: string, body: any): Promise<T> {
+    async post<T>(path: string, body: any, isPublic = false): Promise<T> {
       const response = await this.rawRequest(path, {
         method: "POST",
         body: JSON.stringify(body)
-      });
+      }, !isPublic);
       if (!response.ok) {
         throw new Error(await response.text());
       }
@@ -39,7 +39,7 @@ export const createApi = (host: string) => {
     },
     async refreshToken() {
       console.debug("Refreshing token");
-      const response = await fetch(host + "/v1/refresh-token", {
+      const response = await fetch(host + "/v1/public/refresh-token", {
         method: "POST",
         headers: this.getHeaders(),
         body: JSON.stringify({
@@ -54,7 +54,7 @@ export const createApi = (host: string) => {
         token.value = "";
         refreshToken.value = "";
         accountId.value = "";
-        throw new Error("Refresh token is invalid");
+        throw new UnauthorizedError("Refresh token is invalid");
       }
       if (!response.ok) {
         throw new Error("Server error");
@@ -71,3 +71,10 @@ export const createApi = (host: string) => {
 }
 
 export type Api = ReturnType<typeof createApi>;
+
+export class UnauthorizedError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "UnauthorizedError";
+  }
+}
