@@ -13,7 +13,8 @@ export default {
       'subtitle': ['1.25rem', {lineHeight: '1.75rem'}], // 20px
       'medium': ['1.125rem', {lineHeight: '1.75rem'}], // 18px
       'normal': ['1rem', {lineHeight: '1.5rem'}], // 16px
-      'small': ['0.875rem', {lineHeight: '1.25rem'}], // 14px
+      'small': ['0.875rem', {lineHeight: '1.25rem', fontWeight: '300'}], // 14px
+      'tiny': ['0.75rem', {lineHeight: '1rem'}], // 12px
     },
     colors: {
       'inherit': 'inherit',
@@ -41,9 +42,11 @@ export default {
         900: 'hsl(222, 10%, 5%)'
       },
       'red': {
-        100: 'hsl(344, 90%, 96%)',
-        300: 'hsl(344, 75%, 48%)',
-        500: 'hsl(344, 73%, 38%)',
+        100: 'hsl(356, 100%, 89%)',
+        200: 'hsl(356, 98%, 80%)',
+        300: 'hsl(352, 85%, 66%)',
+        400: 'hsl(348, 68%, 47%)',
+        500: 'hsl(347, 70%, 39%)',
         600: 'hsl(344, 77%, 27%)',
         900: 'hsl(344, 86%, 11%)'
       },
@@ -57,6 +60,7 @@ export default {
       'sky-blue': 'hsl(192, 95%, 65%)'
     },
     spacing: {
+      2: '0.125rem', // 2px
       4: '0.25rem', // 4px
       8: '0.5rem', // 8px
       12: '0.75rem', // 12px
@@ -73,7 +77,20 @@ export default {
       128: '8rem',
       192: '12rem',
       256: '16rem',
+      320: '20rem',
       384: '24rem'
+    },
+    boxShadow: {
+      sm: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
+      DEFAULT: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
+      md: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
+      lg: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
+      xl: '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)',
+      '2xl': '0 25px 50px -12px rgb(0 0 0 / 0.25)',
+      inner: 'inset 0 2px 4px 0 rgb(0 0 0 / 0.05)',
+      none: 'none',
+      '4': '0px 4px 4px rgba(0, 0, 0, 0.25)',
+      '4-lg': '0px 4px 12px rgba(0, 0, 0, 0.52)'
     }
   }
 } as Config;
