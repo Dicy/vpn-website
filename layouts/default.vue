@@ -93,7 +93,7 @@
             </defs>
           </svg>
         </div>
-        <nav aria-label="Main navigation">
+        <nav class="flex-1" aria-label="Main navigation">
           <ul class="flex gap-32">
             <li>
               <nuxt-link to="/">Home</nuxt-link>
@@ -104,12 +104,15 @@
             <li>
               <nuxt-link to="/download">Scarica</nuxt-link>
             </li>
+            <li class="ml-auto">
+              <nuxt-link to="/login">Accedi</nuxt-link>
+            </li>
           </ul>
         </nav>
       </div>
     </div>
   </header>
-  <slot />
+  <slot/>
 </template>
 
 <style scoped>
@@ -137,7 +140,7 @@
 }
 
 nav a {
-  @apply font-semibold text-medium;
+  @apply font-semibold text-normal;
 }
 
 nav a:not(.router-link-active) {

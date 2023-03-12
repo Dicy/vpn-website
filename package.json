@@ -9,7 +9,12 @@
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.4.1",
+    "@pinia/nuxt": "^0.4.7",
     "nuxt": "^3.2.2",
+    "pinia": "^2.0.33",
     "postcss-nesting": "^11.2.1"
+  },
+  "overrides": {
+    "vue": "latest"
   }
 }
