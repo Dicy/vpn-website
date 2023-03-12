@@ -1,4 +1,7 @@
+import {useTokenStore} from "~~/stores/useTokenStore";
+
 export const createApi = (host: string) => {
+  const tokenStore = useTokenStore();
   const token = useToken();
   const refreshToken = useRefreshToken();
   const accountId = useAccountId();
@@ -23,7 +26,7 @@ export const createApi = (host: string) => {
         method: "GET"
       }, !isPublic);
       if (!response.ok) {
-        throw new Error(await response.text());
+        throw new ResponseError(await response.text(), response);
       }
       return await response.json();
     },
@@ -33,7 +36,7 @@ export const createApi = (host: string) => {
         body: JSON.stringify(body)
       }, !isPublic);
       if (!response.ok) {
-        throw new Error(await response.text());
+        throw new ResponseError(await response.text(), response);
       }
       return await response.json();
     },
@@ -57,11 +60,12 @@ export const createApi = (host: string) => {
         throw new UnauthorizedError("Refresh token is invalid");
       }
       if (!response.ok) {
-        throw new Error("Server error");
+        throw new ResponseError(await response.text(), response);
       }
       token.value = response.headers.get("X-Auth-Token") ?? "";
     },
     getHeaders() {
+      console.log("token", token.value);
       return {
         "Content-Type": "application/json",
         "Authorization": "Bearer " + (token.value ?? ""),
@@ -71,6 +75,17 @@ export const createApi = (host: string) => {
 }
 
 export type Api = ReturnType<typeof createApi>;
+
+export class ResponseError extends Error {
+  constructor(message: string, public response: Response) {
+    super(message);
+    this.name = "ResponseError";
+  }
+
+  get status() {
+    return this.response.status;
+  }
+}
 
 export class UnauthorizedError extends Error {
   constructor(message: string) {
