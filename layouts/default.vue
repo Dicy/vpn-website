@@ -105,7 +105,8 @@
               <nuxt-link to="/download">Scarica</nuxt-link>
             </li>
             <li class="ml-auto">
-              <nuxt-link to="/login">Accedi</nuxt-link>
+              <nuxt-link to="/logout" v-if="tokenStore.token">Esci</nuxt-link>
+              <nuxt-link to="/login" v-else>Accedi</nuxt-link>
             </li>
           </ul>
         </nav>
@@ -114,6 +115,12 @@
   </header>
   <slot/>
 </template>
+
+<script setup>
+import {useTokenStore} from "~/stores/useTokenStore";
+
+const tokenStore = useTokenStore()
+</script>
 
 <style scoped>
 :global(:root) {
