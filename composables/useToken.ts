@@ -12,11 +12,18 @@ export const useRefreshToken = () => {
     secure: true,
     maxAge: MAX_AGE,
   });
-}
+};
+
+export const useRefreshTokenId = () => {
+  return useCookie('refreshTokenId', {
+    secure: true,
+    maxAge: MAX_AGE,
+  });
+};
 
 export const useAccountId = () => {
   return useCookie('accountId', {
     secure: true,
     maxAge: MAX_AGE,
   });
-}
+};

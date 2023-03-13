@@ -1,10 +1,7 @@
-import {useTokenStore} from "~~/stores/useTokenStore";
+import {useTokenStore} from "~/stores/useTokenStore";
 
 export const createApi = (host: string) => {
   const tokenStore = useTokenStore();
-  const token = useToken();
-  const refreshToken = useRefreshToken();
-  const accountId = useAccountId();
 
   return {
     rawRequest(path: string, options: RequestInit, shouldRefreshToken = true): Promise<Response> {
@@ -46,29 +43,27 @@ export const createApi = (host: string) => {
         method: "POST",
         headers: this.getHeaders(),
         body: JSON.stringify({
-          refreshToken: refreshToken.value,
-          refreshTokenId: refreshToken.value,
-          accountId: accountId.value
+          refreshToken: tokenStore.refreshToken,
+          refreshTokenId: tokenStore.refreshTokenId,
+          accountId: tokenStore.accountId
         })
       });
       if (response.status === 401) {
         // logout
         console.debug("Refresh token is invalid, clearing tokens");
-        token.value = "";
-        refreshToken.value = "";
-        accountId.value = "";
+        tokenStore.clearToken();
         throw new UnauthorizedError("Refresh token is invalid");
       }
       if (!response.ok) {
         throw new ResponseError(await response.text(), response);
       }
-      token.value = response.headers.get("X-Auth-Token") ?? "";
+      tokenStore.clearToken();
     },
     getHeaders() {
-      console.log("token", token.value);
+      console.log("token", tokenStore.token);
       return {
         "Content-Type": "application/json",
-        "Authorization": "Bearer " + (token.value ?? ""),
+        "Authorization": "Bearer " + (tokenStore.token ?? ""),
       }
     }
   };
