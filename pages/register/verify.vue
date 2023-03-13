@@ -34,6 +34,11 @@ export default {
       message: ''
     }
   },
+  setup() {
+    definePageMeta({
+      middleware: ["non-auth"]
+    });
+  },
   mounted() {
     setInterval(() => {
       this.index = this.index % 3 + 1

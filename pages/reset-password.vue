@@ -36,6 +36,11 @@ export default {
       isDifferent: false
     }
   },
+  setup() {
+    definePageMeta({
+      middleware: ["non-auth"]
+    });
+  },
   methods: {
     async reset() {
       if (this.password !== this.confirmPassword) {

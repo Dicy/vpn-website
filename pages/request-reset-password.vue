@@ -23,6 +23,11 @@ export default {
       email: ''
     }
   },
+  setup() {
+    definePageMeta({
+      middleware: ["non-auth"]
+    });
+  },
   methods: {
     async recover() {
       await useApi().post('/v1/public/password/request-reset', {email: this.email }, true).then(res => {

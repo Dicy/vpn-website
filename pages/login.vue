@@ -19,6 +19,9 @@
       <div class="mt-32 text-small">
         Non hai un account?
         <nuxt-link to="/register" class="underline underline-offset-2">Registrati</nuxt-link>
+        <br>
+        Hai dimenticato la password?
+        <nuxt-link to="/request-reset-password" class="underline underline-offset-2">Recuperala</nuxt-link>
       </div>
     </div>
   </div>
@@ -37,6 +40,10 @@ export default {
     }
   },
   setup() {
+    definePageMeta({
+      middleware: ["non-auth"]
+    });
+
     const tokenStore = useTokenStore()
 
     return {
@@ -70,7 +77,7 @@ export default {
           this.tokenStore.setRefreshToken(refreshToken);
           this.tokenStore.setRefreshTokenId(payloadJson.refreshTokenId);
           this.tokenStore.setAccountId(payloadJson._id);
-          this.$router.push("/");
+          this.$router.push("/account");
         }
       } catch (e) {
         this.loading = false;

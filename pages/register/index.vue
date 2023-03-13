@@ -9,7 +9,7 @@
 
       <div>
         <p class="font-light">Email</p>
-        <input type="text" class="rounded w-full p-4" placeholder="info@pippo.com" v-model="email"/>
+        <input type="email" class="rounded w-full p-4" placeholder="info@pippo.com" v-model="email"/>
       </div>
 
       <div>
@@ -46,6 +46,11 @@ export default {
       confirmPassword: '',
       isDifferent: false
     }
+  },
+  setup() {
+    definePageMeta({
+      middleware: ["non-auth"]
+    });
   },
   methods: {
     async register() {
