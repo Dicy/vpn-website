@@ -60,7 +60,6 @@ export const createApi = (host: string) => {
       tokenStore.clearToken();
     },
     getHeaders() {
-      console.log("token", tokenStore.token);
       return {
         "Content-Type": "application/json",
         "Authorization": "Bearer " + (tokenStore.token ?? ""),
