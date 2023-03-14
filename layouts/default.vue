@@ -141,7 +141,7 @@ const tokenStore = useTokenStore()
 }
 
 .header-background {
-  background: var(--bg-overlay), url('@/assets/images/header-background-network.jpg') no-repeat center var(--bg-offset);
+  background: var(--bg-overlay), url('/images/header-background-network.jpg') no-repeat center var(--bg-offset);
   background-size: cover;
 }
 

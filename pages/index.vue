@@ -1,5 +1,6 @@
 <template>
-  <div class="hero-background text-white">
+  <div class="relative text-white">
+    <nuxt-img class="hero-bg" preload src="/images/header-background-network.jpg" sizes="md:200px lg:400px xl:1000px"/>
     <div class="hero-container w-full">
       <div class="m-auto max-w-screen-xl flex">
         <div class="flex-col items-center justify-center p-128 pb-192 pr-64">
@@ -61,12 +62,13 @@
 </template>
 
 <style scoped>
-.hero-background {
-  background: var(--bg-overlay), url('@/assets/images/header-background-network.jpg') no-repeat center calc(var(--bg-offset) - var(--header-height));
-  background-size: cover;
+.hero-bg {
+  @apply w-full h-full absolute inset-0 object-cover -z-10;
+  object-position: center calc(var(--bg-offset) - var(--header-height));
 }
 
 .hero-container {
+  background: var(--bg-overlay);
   backdrop-filter: blur(5px);
 }
 
