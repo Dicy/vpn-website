@@ -5,7 +5,7 @@
          srcset="/images/hero/w_200-header-background-network.jpg 200w, /images/hero/w_400-header-background-network.jpg 400w, /images/hero/w_1000-header-background-network.jpg 1000w">
     <div class="hero-container w-full">
       <div class="m-auto max-w-screen-xl flex max-lg:flex-col">
-        <div class="flex-col items-center justify-center p-64 lg:p-128 pb-32 lg:pb-192 pr-64">
+        <div class="flex-col items-center justify-center p-64 lg:p-128 pb-32 lg:pb-192 pr-64 lg:pr-64">
           <h1 class="text-h1">Accesso limitato a siti web?<br>Giochi online bloccati?</h1>
           <h2 class="text-h2 font-light mt-20">La VPN che bypassa la maggior parte dei blocchi</h2>
         </div>
