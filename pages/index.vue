@@ -1,6 +1,6 @@
 <template>
   <div class="relative text-white">
-    <img class="hero-bg" src="/images/hero/w_1000-header-background-network.jpg"
+    <img class="hero-bg" src="/images/hero/w_1000-header-background-network.jpg" alt=""
          sizes="(max-width: 768px) 200px, (max-width: 1024px) 400px, 1000px"
          srcset="/images/hero/w_200-header-background-network.jpg 200w, /images/hero/w_400-header-background-network.jpg 400w, /images/hero/w_1000-header-background-network.jpg 1000w">
     <div class="hero-container w-full">
