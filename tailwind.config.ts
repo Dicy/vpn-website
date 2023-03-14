@@ -10,7 +10,7 @@ export default {
     fontSize: {
       'h1': ['2.25rem', {lineHeight: '2.5rem'}], // 36px
       'h2': ['1.5rem', {lineHeight: '2rem'}], // 24px
-      'subtitle': ['1.25rem', {lineHeight: '1.75rem'}], // 20px
+      'subtitle': ['1.25rem', {lineHeight: '1.75rem', fontWeight: '500'}], // 20px
       'medium': ['1.125rem', {lineHeight: '1.75rem'}], // 18px
       'normal': ['1rem', {lineHeight: '1.5rem'}], // 16px
       'small': ['0.875rem', {lineHeight: '1.25rem', fontWeight: '300'}], // 14px
