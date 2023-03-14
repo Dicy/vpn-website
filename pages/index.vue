@@ -1,6 +1,8 @@
 <template>
   <div class="relative text-white">
-    <nuxt-img class="hero-bg" preload src="/images/header-background-network.jpg" sizes="md:200px lg:400px xl:1000px"/>
+    <img class="hero-bg" src="/images/hero/w_1000-header-background-network.jpg"
+         sizes="(max-width: 768px) 200px, (max-width: 1024px) 400px, 1000px"
+         srcset="/images/hero/w_200-header-background-network.jpg 200w, /images/hero/w_400-header-background-network.jpg 400w, /images/hero/w_1000-header-background-network.jpg 1000w">
     <div class="hero-container w-full">
       <div class="m-auto max-w-screen-xl flex">
         <div class="flex-col items-center justify-center p-128 pb-192 pr-64">

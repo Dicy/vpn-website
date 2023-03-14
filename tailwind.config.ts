@@ -21,6 +21,7 @@ export default {
       'current': 'currentColor',
       'transparent': 'transparent',
       'white': '#ffffff',
+      'black': '#000000',
       'blue': {
         100: 'hsl(222, 95%, 88%)',
         200: 'hsl(222, 95%, 82%)',

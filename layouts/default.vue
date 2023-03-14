@@ -1,7 +1,16 @@
 <template>
-  <header class="header-background flex justify-center">
+  <Head>
+    <Title>DicyVPN</Title>
+    <Link rel="preload" as="image" href="/images/hero/w_1000-header-background-network.jpg"
+          imagesizes="(max-width: 768px) 200px, (max-width: 1024px) 400px, 1000px"
+          imagesrcset="/images/hero/w_200-header-background-network.jpg 200w, /images/hero/w_400-header-background-network.jpg 400w, /images/hero/w_1000-header-background-network.jpg 1000w"/>
+  </Head>
+  <header class="relative flex justify-center">
+    <img class="header-bg" src="/images/hero/w_1000-header-background-network.jpg"
+         sizes="(max-width: 768px) 200px, (max-width: 1024px) 400px, 1000px"
+         srcset="/images/hero/w_200-header-background-network.jpg 200w, /images/hero/w_400-header-background-network.jpg 400w, /images/hero/w_1000-header-background-network.jpg 1000w">
     <div class="header-container w-full shadow-lg">
-      <div class="flex items-center text-white px-32 py-12 gap-32 m-auto max-w-screen-xl">
+      <div class="flex items-center text-white px-32 py-12 gap-32 m-auto max-w-screen-xl bg-black/60">
         <nuxt-link to="/">
           <svg width="134" height="48" fill="none" version="1.1" viewBox="0 0 134 48"
                xmlns="http://www.w3.org/2000/svg">
@@ -140,14 +149,14 @@ const tokenStore = useTokenStore()
   }
 }
 
-.header-background {
-  background: var(--bg-overlay), url('/images/header-background-network.jpg') no-repeat center var(--bg-offset);
-  background-size: cover;
+.header-bg {
+  @apply w-full h-full absolute inset-0 object-cover -z-10;
+  object-position: center var(--bg-offset);
 }
 
 .header-container {
   height: var(--header-height);
-  background-color: rgb(0 0 0 / 60%);
+  background: var(--bg-overlay);
   backdrop-filter: blur(8px);
 }
 
