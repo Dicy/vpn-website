@@ -141,7 +141,6 @@ const tokenStore = useTokenStore()
 <style scoped>
 :global(:root) {
   --header-height: 4.5rem; /* 72px */
-  --bg-offset: -30vw;
   --bg-overlay: linear-gradient(hsl(222deg 86% 10% / 54%), hsl(222deg 86% 10% / 54%));
 }
 
@@ -153,7 +152,7 @@ const tokenStore = useTokenStore()
 
 .header-bg {
   @apply w-full h-full absolute inset-0 object-cover -z-10;
-  object-position: center var(--bg-offset);
+  object-position: center;
 }
 
 .header-container {

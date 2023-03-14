@@ -4,12 +4,12 @@
          sizes="(max-width: 768px) 200px, (max-width: 1024px) 400px, 1000px"
          srcset="/images/hero/w_200-header-background-network.jpg 200w, /images/hero/w_400-header-background-network.jpg 400w, /images/hero/w_1000-header-background-network.jpg 1000w">
     <div class="hero-container w-full">
-      <div class="m-auto max-w-screen-xl flex">
-        <div class="flex-col items-center justify-center p-128 pb-192 pr-64">
+      <div class="m-auto max-w-screen-xl flex max-lg:flex-col">
+        <div class="flex-col items-center justify-center p-64 lg:p-128 pb-32 lg:pb-192 pr-64">
           <h1 class="text-h1">Accesso limitato a siti web?<br>Giochi online bloccati?</h1>
           <h2 class="text-h2 font-light mt-20">La VPN che bypassa la maggior parte dei blocchi</h2>
         </div>
-        <div class="lateral-container flex flex-col items-center justify-center p-48 gap-32 max-w-[32rem]">
+        <div class="lateral-container flex flex-col items-center justify-center p-48 gap-32 lg:max-w-[32rem]">
           <div class="features">
             <ul class="flex flex-col gap-8">
               <li>
@@ -38,7 +38,7 @@
       </div>
     </div>
   </div>
-  <section class="max-w-screen-xl my-48 mx-auto flex gap-32 items-stretch justify-center">
+  <section class="max-w-screen-xl my-48 mx-auto px-64 flex max-lg:flex-col gap-32 items-center lg:items-stretch justify-center">
     <div class="feature-card">
       <div class="feature-illustration">
         <img src="@/assets/images/feature-illustration-1.svg" draggable="false" alt="File con dati criptati e lavoro al computer">
@@ -66,7 +66,6 @@
 <style scoped>
 .hero-bg {
   @apply w-full h-full absolute inset-0 object-cover -z-10;
-  object-position: center calc(var(--bg-offset) - var(--header-height));
 }
 
 .hero-container {
