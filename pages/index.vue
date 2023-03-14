@@ -35,6 +35,29 @@
       </div>
     </div>
   </div>
+  <section class="max-w-screen-xl my-48 mx-auto flex gap-32 items-stretch justify-center">
+    <div class="feature-card">
+      <div class="feature-illustration">
+        <img src="@/assets/images/feature-illustration-1.svg" draggable="false" alt="File con dati criptati e lavoro al computer">
+      </div>
+      <h3 class="text-subtitle mt-36">Traffico criptato, ovunque sei</h3>
+      <p class="mt-36">Sei protetto se ti connetti tramite WiFi pubbliche o reti sconosciute</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-illustration">
+        <img src="@/assets/images/feature-illustration-2.svg" draggable="false" alt="Sito web bloccato">
+      </div>
+      <h3 class="text-subtitle mt-36">Raggiungi destinazioni bloccate</h3>
+      <p class="mt-36">Non amiamo la censura, con la nostra VPN raggiungi server bloccati e siti filtrati</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-illustration">
+        <img src="@/assets/images/feature-illustration-3.svg" draggable="false" alt="Computer, tablet e telefono con DicyVPN">
+      </div>
+      <h3 class="text-subtitle mt-36">Proteggi fino a 4 dispositivi</h3>
+      <p class="mt-36">Per ora il client è disponibile solo per Windows, ma almeno puoi proteggere 4 computer</p>
+    </div>
+  </section>
 </template>
 
 <style scoped>
@@ -53,5 +76,16 @@
 
 .features ul li {
   @apply flex gap-12;
+}
+
+.feature-card {
+  @apply border-2 border-gray-100/20 rounded-lg shadow-4 shadow-blue-100/25 flex-1 p-36 pb-64 max-w-[22rem] text-center;
+}
+
+.feature-illustration img {
+  margin: auto;
+  height: 10rem;
+  width: auto;
+  user-select: none;
 }
 </style>
