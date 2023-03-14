@@ -2,7 +2,7 @@
   <header class="header-background flex justify-center">
     <div class="header-container w-full shadow-lg">
       <div class="flex items-center text-white px-32 py-12 gap-32 m-auto max-w-screen-xl">
-        <div>
+        <nuxt-link to="/">
           <svg width="134" height="48" fill="none" version="1.1" viewBox="0 0 134 48"
                xmlns="http://www.w3.org/2000/svg">
             <path d="m107 4-6 36h21c6.648 0 12-5.352 12-12v-12c0-6.648-5.352-12-12-12z" style="fill:#1c47ab"/>
@@ -92,7 +92,7 @@
               </filter>
             </defs>
           </svg>
-        </div>
+        </nuxt-link>
         <nav class="flex-1" aria-label="Main navigation">
           <ul class="flex gap-32">
             <li>
@@ -114,6 +114,11 @@
     </div>
   </header>
   <slot/>
+  <footer class="p-48 flex gap-8 justify-center">
+    <span>DicyVPN &copy; 2023</span>
+    <span>·</span>
+    <a href="mailto:info@dicyvpn.com" class="text-blue-600">Inviaci un'email</a>
+  </footer>
 </template>
 
 <script setup>
